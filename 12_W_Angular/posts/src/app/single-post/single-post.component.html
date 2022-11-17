@@ -1,0 +1,37 @@
+
+<div>
+
+<ng-container *ngIf="!editMode">
+
+    <label for="Title"><b>Title: </b> {{ ThePost.title }} </label> <br />
+    <label for="Title"><b>Thought: </b>  {{ ThePost.thought}} </label> <br />
+
+    <button (click)="edit()">Edit</button>  &nbsp;&nbsp;
+    <button (click)="delete()">Delete</button>
+</ng-container>
+<br /> <br /> <br />
+</div>
+
+<div>
+<ng-container *ngIf="editMode">
+      
+    <label for="editTitle"><b>Title: </b></label>
+    <input type="text" [(ngModel)]="editTitle" />
+    <br /> 
+
+    <label for="editThought"><b>Thought: </b></label>
+    <input type="text" [(ngModel)]="editThought" />
+    <br />
+
+    <button (click)="save()">Save</button> &nbsp;&nbsp;
+    <button (click)="cancel()">Cancel</button>
+    <br /> <br /> <br />
+</ng-container>
+</div>
+
+
+
+
+
+    
+    

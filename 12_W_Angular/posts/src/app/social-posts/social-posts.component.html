@@ -1,0 +1,30 @@
+
+<div>
+
+<button *ngIf="!showAdd" (click)="showAddForm()">New Thought</button>
+
+<ng-container *ngIf="showAdd">
+        
+<h2>Add Post</h2>
+
+    <label for="newTitle"><b>Title: </b></label>
+    <input type="text" [(ngModel)]="newTitle" />
+    <br />
+
+	<label for="newThought"><b>Thought: </b></label>
+    <input type="text" [(ngModel)]="newThought" />
+    <br />   
+
+    <button (click)="add()">Add</button> &nbsp;&nbsp;
+
+</ng-container>
+<br/>  <br/> <br/> 
+
+<ng-container *ngFor="let item of TheList">
+	<app-single-post [ThePost]="item" (remove)="deleteMe($event)"></app-single-post>
+</ng-container>
+<br/>  <br/> <br/> 
+
+</div>
+
+
